@@ -1,3 +1,4 @@
+distr: trusty
 language: c
 addons:
   apt:
