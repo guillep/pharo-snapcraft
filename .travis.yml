@@ -14,4 +14,4 @@ install:
   - docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
 
 script:
-  - docker exec -i builder sh -c "snapcraft"
+  - docker exec -i builder snapcraft
