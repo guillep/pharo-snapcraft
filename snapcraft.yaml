@@ -8,7 +8,7 @@ description:
 confinement: devmode
 
 apps:
-  pharo:
+  pharo-vm:
     command: results/pharo --nodisplay
   pharo-ui:
     command: results/pharo
@@ -20,3 +20,7 @@ parts:
     source-type: git
     source-depth: 1
     build-packages: ["gcc-multilib", "libssl-dev:i386","libssl1.0.0:i386","libfreetype6-dev:i386","libasound2-dev:i386","libsm-dev:i386","libgl1-mesa-dev:i386","libx11-dev:i386","libice-dev:i386"]
+  pharo-sources:
+    plugin: dump
+    source: http://files.pharo.org/sources/PharoV50.sources.zip
+    source-type: zip
