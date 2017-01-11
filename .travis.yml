@@ -10,7 +10,7 @@ install:
     -e LC_ALL=en_US.UTF-8 -td ubuntu:xenial
   - docker exec -i builder locale-gen en_US.UTF-8
   - docker exec -i builder sed -i s/archive.ubuntu.com/us.archive.ubuntu.com/g /etc/apt/sources.list
-  - then docker exec -i builder apt update
+  - docker exec -i builder apt update
   - docker exec -i builder sh -c "apt install snapcraft build-essential git"
 
 script:
