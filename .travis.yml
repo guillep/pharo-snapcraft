@@ -1,0 +1,9 @@
+language: c
+addons:
+  apt:
+    packages:
+    - snapcraft
+    - build-essential
+    - git
+script:
+	- snapcraft
