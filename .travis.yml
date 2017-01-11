@@ -6,4 +6,4 @@ addons:
     - build-essential
     - git
 script:
-	- snapcraft
+    - snapcraft
