@@ -3,4 +3,4 @@ parts/pharo-vm
 *.snap
 prime
 stage
-parts/plugins/__pycache__/
+parts/plugins/__pycache__/*
