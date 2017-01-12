@@ -7,7 +7,7 @@ language: c
 
 install:
   - docker run --name builder
-    -e LC_ALL=en_US.UTF-8 -td ubuntu:xenial
+    -e LC_ALL=en_US.UTF-8 -v $PWD:$PWD -w $PWD -td ubuntu:xenial
   - docker exec -i builder locale-gen en_US.UTF-8
   - docker exec -i builder sed -i s/archive.ubuntu.com/us.archive.ubuntu.com/g /etc/apt/sources.list
   - docker exec -i builder apt update
