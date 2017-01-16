@@ -54,12 +54,12 @@ Notice the packaged snap does not contain an image. You can download one by doin
 
 To get stable release Pharo 5
 ```bash
-$ wget -O- get.pharo.org\50 | bash
+$ wget -O- get.pharo.org/50 | bash
 ```
 
 Or latest in-development Pharo 6
 ```bash
-$ wget -O- get.pharo.org\60 | bash
+$ wget -O- get.pharo.org/60 | bash
 ```
 
 - Manual downloads
