@@ -11,7 +11,7 @@ To build a snap package from this repository, you'll first need to install snapc
 
 ```bash
 $ sudo apt install snapcraft
-$ sudo apt install build-essentials
+$ sudo apt install build-essential git
 ``` 
 
 Otherwise, you can follow the instructions in the snapcraft webpage: http://snapcraft.io/create/
