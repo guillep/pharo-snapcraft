@@ -5,6 +5,8 @@ This package builds a snap package containing a pharo-vm. Using this snapcraft p
 
 Note: On ubuntu, Snaps are supported on versions >=16.04.
 
+[![Build Status](https://travis-ci.org/guillep/pharo-snapcraft.svg?branch=master)](https://travis-ci.org/guillep/pharo-snapcraft)
+
 ## How to use
 
 ### Installing Snapcraft
