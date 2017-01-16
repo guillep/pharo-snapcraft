@@ -3,6 +3,8 @@
 Snapcraft (http://snapcraft.io/) package of Pharo (http://www.pharo.org).
 This package builds a snap package containing a pharo-vm. Using this snapcraft packaging, the pharo-vm is built from scratch and packaged with all its dependencies. This should make sure that your vm runs on the ubuntu/debian system of your preference.
 
+Note: On ubuntu, Snaps are supported on versions >=16.04.
+
 ## How to use
 
 ### Installing Snapcraft
