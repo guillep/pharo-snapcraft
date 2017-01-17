@@ -10,7 +10,7 @@
       "desc": "Automatic build"
     },
     "files": [{
-      "includePattern": "(.*).snap",
+      "includePattern": "(.*)\.snap",
       "uploadPattern": "$1"
     }],
     "publish": true
