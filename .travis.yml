@@ -15,7 +15,9 @@ script:
 - docker cp builder:$PWD/pharo-vm_6.0_amd64.snap $PWD
 before_deploy:
 - mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_4̣`git describe --always`.snap
+- ls -l
 - "./scripts/deploy_bintray_prepare.sh"
+
 deploy:
   provider: bintray
   file: ".bintray.json"
