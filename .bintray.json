@@ -1,0 +1,17 @@
+{
+    "package": {
+        "name": "PharoVM-Snap",
+        "repo": "pharo",
+        "subject": "pharo-project",
+        "licenses": ["MIT"]
+    },
+    "version": {
+      "name": "$Rev$",
+      "desc": "Automatic build"
+    },
+    "files": [{
+      "includePattern": "*.snap",
+      "uploadPattern": "$1"
+    }],
+    "publish": true
+}
