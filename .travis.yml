@@ -1,32 +1,26 @@
 sudo: required
 dist: trusty
-
-services: [docker]
-
+services:
+- docker
 language: c
-
 install:
-  - docker run --name builder
-    -e LC_ALL=en_US.UTF-8 -v $PWD:$PWD -w $PWD -td ubuntu:xenial
-  - docker exec -i builder locale-gen en_US.UTF-8
-  - docker exec -i builder sed -i s/archive.ubuntu.com/us.archive.ubuntu.com/g /etc/apt/sources.list
-  - docker exec -i builder dpkg --add-architecture i386
-  - docker exec -i builder apt update
-  - docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
-
+- docker run --name builder -e LC_ALL=en_US.UTF-8 -v $PWD:$PWD -w $PWD -td ubuntu:xenial
+- docker exec -i builder locale-gen en_US.UTF-8
+- docker exec -i builder sed -i s/archive.ubuntu.com/us.archive.ubuntu.com/g /etc/apt/sources.list
+- docker exec -i builder dpkg --add-architecture i386
+- docker exec -i builder apt update
+- docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
 script:
-  - docker exec -i builder snapcraft
-  - docker cp builder:$PWD/pharo-vm_6.0_amd64.snap $PWD
-
+- docker exec -i builder snapcraft
+- docker cp builder:$PWD/pharo-vm_6.0_amd64.snap $PWD
 before_deploy:
-  - mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_4̣`git describe --always`.snap
-  - ./scripts/deploy_bintray_prepare.sh
-
+- mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_4̣`git describe --always`.snap
+- "./scripts/deploy_bintray_prepare.sh"
 deploy:
   provider: bintray
   file: ".bintray.json"
-  user: "guillep"
+  user: guillep
   key:
-    secure: iCTa9gER9O8lwHi6d52MZzrT96j5QhPC9y/oSmpMzdh91op3cjQXDGVzu+NUhZ77OUCRCCtSm2ISFbIztDbkgci0eBjJ8bmQDjZKI5+MEaKyJf7l0L1LQ3ahNfnSDVIdNg9EyxByP4TJNIPGZ8SnQzLy9Anp2GKo+ONWMPHcHR9EO5Mey4Wehwz/g3KvN+WJ5Z/8FBW5n4a6lARYBUijsYAQSAwGt/bBjVRTRWjC61gQCVi6av7WLD1MRG2FguH75EuDZYkO2LOJSK0H4k5jaOpRzz+Vff0Zb/r9YIk1IyjpJsHq5y0EUcr5VuPllV43qIAT3s/9UUZ2T4AFrq1e4zpYNb/TWRHMgB5EYOkYCqlH2LcH6aQySRzJohA1qGzMq1SoblPFEZYlYKKHizTHkYxasGr32cfvh6Gv4/BaEd3/y6xKpTQ6D1u05ea1ccNRZkoqp1jivvh0r9PXQY40whgDoUVInC2/zKvbwZGA+7zOM72Hk8BT3zL+fLNyNeuEnozddYRrvAiGxT/rqeLIuYKnXfAu2WrVKWMQ5jBjVdus6ZJYbPJP2eqAcLAIco+ZqCFE8jruIopMeg0+4V8hUgP9Xn1CxNLNIVMc9RogKY/xIy0aYlrCtODc2Xz+6NDXci2jmVWLKEj+jYNDg7qJfR7jErK0DCE3Vhp1aa4DGug=
+    secure: lN15/VIBljt6zGGxghbXLhVhWxXb63d15/wVkgg36atpRsziOE0BkVzKDO6JtxNxRhBsaXsE4+u/eKhkJxwzRFTDXgwYClubyJJjLvVjCLW8oIgJe434aUPWjZW3IPeTTMLdZJO35q0CCZCT6udxq6SITvvbQMQ5wFf5lXBpcsVQEciJQho5USh82hS0OxSoKVRb4Knhy3AYioJ9S1XMBViYvMg4OZ0a0HrQSXfI/46u0bGzilUTpwDqg2xa4Mttn/Sa7j0swaIUTijBtYreSKSad+QoMreJpl3cukG7LnlnYQhnSqVrcAMIwKdUaIkCbCjRXJatB29aAbjoWYXpTrxEAIRaouPVclolqnUZIxQJzKw2iXg0rOufNGdTK73yvq23U8+3Q062/FzI1foWwppSz7q4Q6CIP0HKbJOrD2y9Fme0okW9jbhp/4KxIZrJRSX7nIlfMwefI1Fi+hI0YOnaWZZNYDlxo7gFNryCLabiC8i45HaraUGb44yPpY1ToCCOu2XHS26r+VAYk8IyAJmcq8/8R7s9CUxd7/zdSjgQOKIUP4U0GImnnwoW4932UpysxvV2Z8vUdpRTxxRq7HeNM8uK72EDTr2T95zJ12JU4nbhwNUEwf65Hz5oWBZCladk247J3VGmxHZwK7yjq9el+YgCsYf5ZPAjwKVttEQ=
   on:
     all_branches: true
