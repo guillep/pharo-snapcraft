@@ -6,7 +6,7 @@
         "licenses": ["MIT"]
     },
     "version": {
-      "name": "201701171648",
+      "name": "$Rev$",
       "desc": "Automatic build"
     },
     "files": [{
