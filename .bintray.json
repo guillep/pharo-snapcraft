@@ -6,11 +6,11 @@
         "licenses": ["MIT"]
     },
     "version": {
-      "name": "$Rev$",
+      "name": "201701171648-bintray",
       "desc": "Automatic build"
     },
     "files": [{
-      "includePattern": "*.snap",
+      "includePattern": "results/(.*\.snap)",
       "uploadPattern": "$1"
     }],
     "publish": true
