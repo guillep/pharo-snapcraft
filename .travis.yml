@@ -16,6 +16,7 @@ install:
 
 script:
   - docker exec -i builder snapcraft
+  - docker cp builder:$PWD/*.snap $PWD
 
 before_deploy:
   - mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_4̣`git describe --always`.snap
