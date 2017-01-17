@@ -6,7 +6,7 @@
         "licenses": ["MIT"]
     },
     "version": {
-      "name": "201701171648-bintray",
+      "name": "201701171648",
       "desc": "Automatic build"
     },
     "files": [{
