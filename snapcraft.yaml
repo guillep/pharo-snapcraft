@@ -9,9 +9,9 @@ confinement: devmode
 
 apps:
   pharo-vm:
-    command: results/pharo --nodisplay
+    command: bin/pharo --nodisplay
   pharo-ui:
-    command: results/pharo
+    command: bin/pharo
 
 parts:
   pharo-vm:
@@ -20,7 +20,11 @@ parts:
     source-type: git
     source-depth: 1
     build-packages: ["gcc-multilib", "libssl-dev:i386","libssl1.0.0:i386","libfreetype6-dev:i386","libasound2-dev:i386","libsm-dev:i386","libgl1-mesa-dev:i386","libx11-dev:i386","libice-dev:i386", "wget", "unzip", "cmake"]
+    organize:
+      results: bin
   pharo-sources:
     plugin: dump
     source: http://files.pharo.org/sources/PharoV50.sources.zip
     source-type: zip
+    organize:
+      PharoV50.sources: bin/PharoV50.sources
