@@ -12,9 +12,9 @@ install:
 - docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
 script:
 - docker exec -i builder snapcraft
-- docker cp builder:$PWD/pharo-vm_6.0_amd64.snap $PWD
+- docker cp builder:$PWD/pharo-vm_6.0_amd64.snap .
 before_deploy:
-- mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_4̣`git describe --always`.snap
+- mv pharo-vm_6.0_amd64.snap pharo-vm_6.0_amd6_`git describe --always`.snap
 - ls -l
 - "./scripts/deploy_bintray_prepare.sh"
 
