@@ -7,6 +7,8 @@ Note: On ubuntu, Snaps are supported on versions >=16.04.
 
 [![Build Status](https://travis-ci.org/guillep/pharo-snapcraft.svg?branch=master)](https://travis-ci.org/guillep/pharo-snapcraft)
 
+ [![Downloads](https://api.bintray.com/packages/pharo-project/pharo/PharoVM-Snap/images/download.svg) ](https://bintray.com/pharo-project/pharo/PharoVM-Snap/)
+
 ## How to use
 
 ### Installing Snapcraft
