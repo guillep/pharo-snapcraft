@@ -12,6 +12,7 @@ install:
 - docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
 - docker run --name runner -e LC_ALL=en_US.UTF-8 -v $PWD:$PWD -w $PWD -td ubuntu:xenial
 - docker exec -i runner locale-gen en_US.UTF-8
+- docker exec -i runner apt update
 - docker exec -i runner sh -c "apt install -y wget"
 script:
 - docker exec -i builder snapcraft
