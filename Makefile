@@ -1,5 +1,7 @@
 all: get
+	pwd
 	cd opensmalltalk-vm/build.linux32x86/pharo.cog.spur/build/
+	ls
 	./mvm
 
 get:
