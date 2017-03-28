@@ -10,8 +10,14 @@ install:
 - docker exec -i builder dpkg --add-architecture i386
 - docker exec -i builder apt update
 - docker exec -i builder sh -c "apt install -y snapcraft build-essential git"
+- docker run --name runner -e LC_ALL=en_US.UTF-8 -v $PWD:$PWD -w $PWD -td ubuntu:xenial
+- docker exec -i runner locale-gen en_US.UTF-8
+- docker exec -i runner sh -c "apt install -y wget"
 script:
 - docker exec -i builder snapcraft
+- docker exec -i runner sh -c "sudo snap install --dangerous --devmode pharo-vm_6.0_amd64.snap"
+- docker exec -i runner sh -c "wget -O- get.pharo.org/50 | bash"
+- docker exec -i runner sh -c "pharo-vm Pharo.image eval 1+2"
 before_deploy:
 - mkdir results
 - docker cp builder:$PWD/pharo-vm_6.0_amd64.snap results/pharo-vm_6.0_amd6_`git describe --always`.snap
