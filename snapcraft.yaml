@@ -15,7 +15,7 @@ apps:
 
 parts:
   pharo-vm:
-    plugin: pharo-build-plugin
+    plugin: make
     source: https://github.com/OpenSmalltalk/opensmalltalk-vm.git
     source-type: git
     source-depth: 1
