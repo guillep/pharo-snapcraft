@@ -19,7 +19,7 @@ parts:
     source: ./
     source-type: git
     source-depth: 1
-    build-packages: [ "gcc-multilib", "libssl-dev:i386","libssl1.0.0:i386","libfreetype6-dev:i386","libasound2-dev:i386","libsm-dev:i386","libgl1-mesa-dev:i386","libx11-dev:i386","libice-dev:i386", "wget", "unzip", "cmake"]
+    build-packages: [ "gcc-multilib", "libssl-dev:i386","libssl1.0.0:i386","libfreetype6-dev:i386","libasound2-dev:i386","libsm-dev:i386","libgl1-mesa-dev:i386","libx11-dev:i386","libice-dev:i386", "wget", "curl", "unzip", "cmake",]
     stage-packages: [ "gcc-multilib", "libssl-dev:i386","libssl1.0.0:i386","libfreetype6-dev:i386","libasound2-dev:i386","libsm-dev:i386","libgl1-mesa-dev:i386","libx11-dev:i386","libice-dev:i386" ]
     organize:
       results: bin
